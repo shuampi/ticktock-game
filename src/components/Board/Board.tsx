@@ -1,12 +1,10 @@
-
-import React from 'react'
-import Square from '../Square/Square'
-import style from './board.module.css'
+import React from "react";
+import Square from "../Square/Square";
+import style from "./board.module.css";
 
 interface boardProps {
-    square?:string;
-    onClick?:()=> string;
-    
+  square: (string | null)[];
+  onClick?: () => string;
 }
 
 // const style = {
@@ -19,20 +17,15 @@ interface boardProps {
 //     gridTemplate: 'repeat(3, 1fr) / repeat(3, 1fr)'
 // }
 
-const Board = ({square, onClick}: boardProps) => {
+const Board = ({ square, onClick }: boardProps) => {
   return (
     <div className={style.board}>
-        <Square value="1" onClick={()=> onClick}/>
-        <Square value="2" onClick={()=> onClick}/>
-        <Square value="3" onClick={()=> onClick}/>
-        <Square value="4" onClick={()=> onClick}/>
-        <Square value="5" onClick={()=> onClick}/>
-        <Square value="6" onClick={()=> onClick}/>
-        <Square value="7" onClick={()=> onClick}/>
-        <Square value="8" onClick={()=> onClick}/>
-        <Square value="9" onClick={()=> onClick}/>
+      {square.map((square, index) => {
+        return <Square value={square} onClick={() => onClick} />;
+      })}
+     
     </div>
-  )
-}
+  );
+};
 
-export default Board
+export default Board;

@@ -2,7 +2,7 @@ import React, { MouseEventHandler } from 'react'
 import style from './square.module.css'
 interface squareProps{
     onClick: MouseEventHandler | undefined;
-    value:string;
+    value:string | null;
 }
 
 // const style = {
