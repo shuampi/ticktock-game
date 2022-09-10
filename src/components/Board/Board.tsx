@@ -4,7 +4,7 @@ import style from "./board.module.css";
 
 interface boardProps {
   square: (string | null)[];
-  onClick?: () => string;
+  onClick?: (i: number) => void;
 }
 
 // const style = {
@@ -20,10 +20,9 @@ interface boardProps {
 const Board = ({ square, onClick }: boardProps) => {
   return (
     <div className={style.board}>
-      {square.map((square, index) => {
-        return <Square value={square} onClick={() => onClick} />;
-      })}
-     
+      {square.map((square, index) => (
+        <Square key={index} value={square} onClick={() => onClick} />
+      ))}
     </div>
   );
 };
