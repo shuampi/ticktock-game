@@ -1,6 +1,7 @@
 
 import React from 'react'
 import Square from '../Square/Square'
+import style from './board.module.css'
 
 interface boardProps {
     square?:string;
@@ -8,19 +9,19 @@ interface boardProps {
     
 }
 
-const style = {
-    border:'4px solid darkblue',
-    borderRadius:'10px',
-    width: '250px',
-    height:'250px',
-    margin:'0 auto',
-    display:'grid',
-    gridTemplate: 'repeat(3, 1fr) / repeat(3, 1fr)'
-}
+// const style = {
+//     border:'4px solid darkblue',
+//     borderRadius:'10px',
+//     width: '250px',
+//     height:'250px',
+//     margin:'0 auto',
+//     display:'grid',
+//     gridTemplate: 'repeat(3, 1fr) / repeat(3, 1fr)'
+// }
 
 const Board = ({square, onClick}: boardProps) => {
   return (
-    <div style={style}>
+    <div className={style.board}>
         <Square value="1" onClick={()=> onClick}/>
         <Square value="2" onClick={()=> onClick}/>
         <Square value="3" onClick={()=> onClick}/>

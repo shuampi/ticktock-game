@@ -1,22 +1,22 @@
 import React, { MouseEventHandler } from 'react'
-//import style from './square.module.css'
+import style from './square.module.css'
 interface squareProps{
     onClick: MouseEventHandler | undefined;
     value:string;
 }
 
-const style = {
-    background:'lightblue',
-    border: '2px solid darkblue',
-    fontSize:'30px',
-    fontWeight:'800',
-    cursor:'pointer',
-    outline:'none'
-};
+// const style = {
+//     background:'lightblue',
+//     border: '2px solid darkblue',
+//     fontSize:'30px',
+//     fontWeight:'800',
+//     cursor:'pointer',
+//     outline:'none'
+// };
 
 const Square = ({onClick, value}:squareProps) => {
   return (
-    <button style={style} onClick={onClick}>
+    <button className={style.square} onClick={onClick}>
         {value}
     </button>
   )
